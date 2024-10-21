@@ -327,7 +327,7 @@ module.exports = async ({ appSdk, storeId, auth }, orderId, opts = {}) => {
       if (transaction.installments) {
         const { number } = transaction.installments
         qnt = number
-        vlr = (subtotal || amount.total) / number
+        vlr = (subtotal || amount.total) / number 
       }
       */
 

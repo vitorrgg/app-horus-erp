@@ -321,13 +321,15 @@ module.exports = async ({ appSdk, storeId, auth }, orderId, opts = {}) => {
       const paymentMethodCode = transaction && transaction.payment_method.code
       subtotal += subtotal ? (amount.freight || 0) : 0
 
-      let vlr = subtotal || amount.total
+     /* enviando para ERP recebimentos parcelados, retirando por conta desse pedido https://community.e-com.plus/t/saldo-do-estoque-nao-atualiza-corretamente/6638/7
+     let vlr = subtotal || amount.total
       let qnt = 1
       if (transaction.installments) {
         const { number } = transaction.installments
         qnt = number
         vlr = (subtotal || amount.total) / number
       }
+      */
 
       const body = {
         COD_EMPRESA: companyCode,
